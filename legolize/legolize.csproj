@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Algo\API.cs" />
     <Compile Include="Algo\Model.cs" />
+    <Compile Include="Algo\ModelMaster.cs" />
     <Compile Include="Doer.cs" />
     <Compile Include="PointCloud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

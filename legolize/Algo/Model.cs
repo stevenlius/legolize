@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Text;
 
 namespace Legolize.Algo
@@ -9,7 +10,7 @@ namespace Legolize.Algo
         private readonly int _ySize;
         private readonly int _zSize;
 
-        private BitArray _vals;
+        private ulong[] _vals;
 
         private readonly int _xTy;
 
@@ -21,7 +22,7 @@ namespace Legolize.Algo
 
             _xTy = xSize * ySize;
 
-            _vals = new BitArray(_xTy * _zSize, false);
+            _vals = new ulong[(_xTy * _zSize + 63) / 64];
         }
 
         private Model(Model from)
@@ -32,20 +33,58 @@ namespace Legolize.Algo
 
             _xTy = from._xTy;
 
-            _vals = new BitArray(from._vals);
+            _vals = new ulong[from._vals.Length];
+            Array.Copy(from._vals, _vals, _vals.Length);
+        }
+
+        private bool this[int pos]
+        {
+            get
+            {
+                return ((_vals[pos >> 6] >> (pos & 63)) & 0x1) == 0x1;
+            }
+
+            set
+            {
+                if(value)
+                    _vals[pos >> 6] |= 1ul << (pos & 63);
+                else
+                    _vals[pos >> 6] &= ~(1ul << (pos & 63));
+            }
         }
 
         public bool this[int x, int y, int z]
         {
             get 
             {
-                return _vals[z * _xTy + y * _xSize + x];
+                return this[z * _xTy + y * _xSize + x];
             }
 
             set
             {
-                _vals[z * _xTy + y * _xSize + x] = value;
+                this[z * _xTy + y * _xSize + x] = value;
             }
+        }
+
+        public bool Can(Brick brick)
+        {
+            // todo faster algo
+            for (var iz = brick.LeftLowNear.Z; iz < brick.RightUpFar.Z; iz++)
+                for (var iy = brick.LeftLowNear.Y; iy < brick.RightUpFar.Y; iy++)
+                    for (var ix = brick.LeftLowNear.X; iz < brick.RightUpFar.X; ix++)
+                        if (!this[ix, iy, iz])
+                            return false;
+
+            return true;            
+        }
+
+        public void Set(Brick brick, bool value)
+        {
+            // todo faster algo
+            for (var iz = brick.LeftLowNear.Z; iz < brick.RightUpFar.Z; iz++)
+                for (var iy = brick.LeftLowNear.Y; iy < brick.RightUpFar.Y; iy++)
+                    for (var ix = brick.LeftLowNear.X; iz < brick.RightUpFar.X; ix++)
+                        this[ix, iy, iz] = value;
         }
 
         public IModel DeepCopy() => new Model(this);

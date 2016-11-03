@@ -5,6 +5,10 @@ namespace Legolize.Algo
     interface IModel
     {
         bool this[int x, int y, int z] { get; set; }
+
+        bool Can(Brick brick);
+        void Set(Brick brick, bool value);
+
         IModel DeepCopy();
     }
 
