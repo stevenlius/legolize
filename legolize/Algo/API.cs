@@ -5,6 +5,7 @@ namespace Legolize.Algo
     interface IModel
     {
         bool this[int x, int y, int z] { get; set; }
+        IModel DeepCopy();
     }
 
     interface Brick
@@ -12,13 +13,7 @@ namespace Legolize.Algo
         Point LeftLowNear { get; }
         Point RightUpFar { get; }
     }
-
-    interface IBrickStack
-    {
-        void Push(Brick brick);
-        Brick Pop();
-        Brick Peek();
-    }
+    
 
     struct Slot
     {
@@ -33,11 +28,11 @@ namespace Legolize.Algo
         void IncreasePriority(int iSlot);        
     }
 
-    interface ModelMaster
+    interface IModelMaster
     {
         SlotPriorityQueue Slots { get; }
 
-        IBrickStack Bricks { get; }
+        Stack<Brick> Bricks { get; }
         IModel Model { get; }
 
         // remove slot from SlotPriorityQueue
@@ -54,12 +49,12 @@ namespace Legolize.Algo
         // clone SlotPriorityQueue
         // references Model
         // references BrickStack
-        ModelMaster Clone();
+        IModelMaster Clone();
 
         // clone SlotPriorityQueue
         // clone Model
         // clone BrickStack
-        ModelMaster DeepClone();
+        IModelMaster DeepClone();
 
         // Move forward
         // Clone(), SlotToBrick, CreateNewSlots
