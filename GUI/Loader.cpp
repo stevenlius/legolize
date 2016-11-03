@@ -102,7 +102,7 @@ void Loader::createDefaultConfig_Models(std::ostream & stream)
 {
 	stream
 		<< std::endl << ";;;Model settings;;;" << std::endl << std::endl
-		<< ";Model " << "C:\\Temp\\ModelFile.dat" << "\t\t; Models - to be used in order" << std::endl
+		<< ";Model " << "..\\..\\..\\..\\GUI\\sample.model" << "\t\t; Models - to be used in order" << std::endl
 		;
 }
 
