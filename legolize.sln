@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "legolize", "legolize/legolize.csproj", "{5CAAE485-7B39-4590-82F8-FFC83051DC8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "legolize", "legolize\legolize.csproj", "{5CAAE485-7B39-4590-82F8-FFC83051DC8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointCloudGen", "PointCloudGen\PointCloudGen.csproj", "{08979C8D-ECB9-4411-932B-88BBBB1D7D8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legolizer", "Legolizer\Legolizer.csproj", "{EBA8ADAE-2C83-4039-9B8E-EEB3DACF42B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{5CAAE485-7B39-4590-82F8-FFC83051DC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CAAE485-7B39-4590-82F8-FFC83051DC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CAAE485-7B39-4590-82F8-FFC83051DC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08979C8D-ECB9-4411-932B-88BBBB1D7D8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08979C8D-ECB9-4411-932B-88BBBB1D7D8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08979C8D-ECB9-4411-932B-88BBBB1D7D8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08979C8D-ECB9-4411-932B-88BBBB1D7D8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBA8ADAE-2C83-4039-9B8E-EEB3DACF42B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA8ADAE-2C83-4039-9B8E-EEB3DACF42B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBA8ADAE-2C83-4039-9B8E-EEB3DACF42B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBA8ADAE-2C83-4039-9B8E-EEB3DACF42B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

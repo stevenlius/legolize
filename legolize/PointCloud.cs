@@ -1,6 +1,6 @@
-﻿namespace legolize
+﻿namespace Legolize
 {
-    struct Point
+    public struct Point
     {
         public readonly int X, Y, Z;
 
@@ -11,15 +11,25 @@
             Z = z;
         }
 
+        public override string ToString()
+        {
+            return $"({X},{Y},{Z})";
+        }
+
     }
 
-    class PointCloud
+    public class PointCloud
     {
         public readonly Point[] Cloud;
 
         public PointCloud(Point[] cloud)
         {
             Cloud = cloud;
+        }
+
+        public override string ToString()
+        {
+            return string.Join("\n", Cloud);
         }
     }
 }
