@@ -15,7 +15,23 @@
         {
             return $"({X},{Y},{Z})";
         }
+    }
 
+    struct MutablePoint
+    {
+        public int X, Y, Z;
+
+        public MutablePoint(int x, int y, int z)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+        }
+
+        public override string ToString()
+        {
+            return $"({X},{Y},{Z})";
+        }
     }
 
     public class PointCloud
