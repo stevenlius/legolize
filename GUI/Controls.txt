@@ -1,0 +1,21 @@
+{=MOVEMENT=}
+[LEFT]	move left
+[RIGHT]	move right
+[UP]	move up
+[DOWN]	move down
+[HOME]	move closer
+[END]	move further
+
+{=ROTATION=}
+[SHIFT][LEFT]	rotate axis x negative
+[SHIFT][RIGHT]	rotate axis x positive
+[SHIFT][UP]		rotate axis y negative
+[SHIFT][DOWN]	rotate axis y positive
+[SHIFT][HOME]	rotate axis z positive
+[SHIFT][END]	rotate axis z negative
+
+{=MISCLEANOUS=}
+[F1] change fullscreen mode
+[DELETE] saves photo into png file
+[ESC] terminate program
+[RETURN] OnRuntime config reload (may not behave exactly as when loaded on startup - meant for pathFinding position changes)
