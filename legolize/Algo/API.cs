@@ -9,13 +9,13 @@ namespace Legolize.Algo
         bool Can(Brick brick);
         void Set(Brick brick, bool value);
 
-        IModel DeepCopy();
+        IModel DeepClone();
     }
 
-    interface Brick
+    struct Brick
     {
-        Point LeftLowNear { get; }
-        Point RightUpFar { get; }
+        public Point LeftLowNear { get; }
+        public Point RightUpFar { get; }
     }
     
 
@@ -28,7 +28,7 @@ namespace Legolize.Algo
 
     interface SlotPriorityQueue : IList<Slot>
     {
-        SlotPriorityQueue DeepCopy();
+        SlotPriorityQueue DeepClone();
         void IncreasePriority(int iSlot);        
     }
 
@@ -66,5 +66,7 @@ namespace Legolize.Algo
         // pop brick, update Model
         void MoveBack();        
     }
+
+
 
 }

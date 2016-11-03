@@ -60,7 +60,7 @@ namespace Legolize.Algo
             _list.CopyTo(array, arrayIndex);
         }
 
-        public SlotPriorityQueue DeepCopy()
+        public SlotPriorityQueue DeepClone()
         {
             SlotPriorityQueue newSPQ = new SlotPriorityQueueList();
             foreach (var slot in _list)

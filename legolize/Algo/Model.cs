@@ -87,7 +87,7 @@ namespace Legolize.Algo
                         this[ix, iy, iz] = value;
         }
 
-        public IModel DeepCopy() => new Model(this);
+        public IModel DeepClone() => new Model(this);
 
         public override string ToString()
         {
