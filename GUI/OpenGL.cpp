@@ -86,7 +86,7 @@ void OpenGL::drawGLScene()
 	glVertexPointer(3, GL_FLOAT, 0, vertex.data());
 
 	// Load data
-	glDrawArrays(GL_TRIANGLES, 0, vertex.size());
+	glDrawArrays(GL_TRIANGLES, 0, vertex.size() / 3);
 
 	// Disable batch approach for graphics
 	glDisableClientState(GL_VERTEX_ARRAY);
