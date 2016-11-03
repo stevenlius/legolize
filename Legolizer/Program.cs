@@ -12,7 +12,10 @@ namespace Legolizer
     {
         static void Main(string[] args)
         {
-            Doer.Do(PointCloudGen.Generator.Cube(10, 8, 6));
+            //Doer.Do(PointCloudGen.Generator.Cube(10, 8, 6));
+
+            Legolize.Algo.QTester qt = new Legolize.Algo.QTester();
+            Console.ReadLine();
 
         }
     }
