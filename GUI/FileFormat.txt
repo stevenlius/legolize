@@ -1,0 +1,23 @@
+===TRIANGLE FILE===
+
+Binary file
+Triangles (no separathor, no trailer, no header)
+
+Triangle:
+	Triangle points (order not important)
+		[GLfloat * 3] x,y,z of point A
+		[GLfloat * 3] r,g,b of point A
+		[GLfloat * 3] x,y,z of point B
+		[GLfloat * 3] r,g,b of point B
+		[GLfloat * 3] x,y,z of point C
+		[GLfloat * 3] r,g,b of point C
+	Triangle normal
+		[GLfloat * 3] x,y,z of normal
+
+==SCENE FILE==
+Bricks (no separator, no trailer, no header)
+
+Brick:
+	[GLint] ModelID
+	[GLFloat * 3] x,y,z of model
+	[GLint] rotation
