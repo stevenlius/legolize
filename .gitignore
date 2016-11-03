@@ -27,6 +27,17 @@
 *.exe
 *.out
 *.app
-*.suo
 **/obj/**
 **/bin/**
+
+# C++ binaries
+/Binaries
+/Intermediates
+/ipch
+
+# MetaFiles
+*.suo
+*.user
+/.vs
+/*.VC.opendb
+/*.VC.db
